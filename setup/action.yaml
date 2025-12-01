@@ -1,0 +1,56 @@
+name: 'setup-netlogo'
+description: 'Action to setup the NetLogo environment'
+author: 'Daniel Vartanian'
+inputs:
+  version:
+    description: |
+      The NetLogo version to use (e.g., "7.0.2"). You can find them at
+      <https://ccl.northwestern.edu/netlogo/oldversions.shtml>.
+    required: true
+    default: '7.0.2'
+  architecture:
+    description: 'The NetLogo system architecture to use ("32" or "64").'
+    required: true
+    default: '64'
+  cache:
+    description: 'Whether NetLogo should be cached across runs or not.'
+    required: true
+    default: 'true'
+runs:
+  using: "composite"
+  steps:
+    - name: Restore NetLogo Cache
+      if: inputs.cache == 'true'
+      id: netlogo-cache
+      uses: actions/cache@v4
+      with:
+        path: '/opt/NetLogo ${{inputs.version}}'
+        key: netlogo-${{inputs.version}}-${{inputs.architecture}}
+
+    - name: Download NetLogo
+      if: inputs.cache != 'true' || steps.netlogo-cache.outputs.cache-hit != 'true'
+      run: |
+        NETLOGO_TAR="NetLogo-${{inputs.version}}-${{inputs.architecture}}.tgz"
+        wget \
+          "https://ccl.northwestern.edu/netlogo/${{inputs.version}}/${NETLOGO_TAR}" \
+          -O "/tmp/${NETLOGO_TAR}"
+      shell: bash
+
+    - name: Install NetLogo
+      if: inputs.cache != 'true' || steps.netlogo-cache.outputs.cache-hit != 'true'
+      run: |
+        NETLOGO_TAR="NetLogo-${{inputs.version}}-${{inputs.architecture}}.tgz"
+        sudo tar -xvzf "/tmp/${NETLOGO_TAR}" -C "/opt/"
+      shell: bash
+
+    - name: Set Variables and PATH
+      run: |
+        NETLOGO_HOME="/opt/NetLogo ${{inputs.version}}"
+        echo "NETLOGO_HOME=${NETLOGO_HOME}" >> "$GITHUB_ENV"
+        echo "NETLOGO_CONSOLE=${NETLOGO_HOME}/NetLogo_Console" >> "$GITHUB_ENV"
+        echo "${NETLOGO_HOME}" >> "$GITHUB_PATH"
+      shell: bash
+
+    - name: Test NetLogo
+      run: NetLogo_Console --version
+      shell: bash
