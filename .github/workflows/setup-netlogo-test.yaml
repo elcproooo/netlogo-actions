@@ -25,5 +25,5 @@ jobs:
           cache: ${{ matrix.cache }}
 
       - name: Test NetLogo Installation
-        run: netlogo --version
+        run: netlogo --help
         shell: bash
