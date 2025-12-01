@@ -5,7 +5,7 @@ on:
 name: "setup-netlogo: Using Other NetLogo Versions"
 
 jobs:
-  NetLogo-check:
+  netlogo-check:
     runs-on: ubuntu-latest
     permissions: read-all
     steps:

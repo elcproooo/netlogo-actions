@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document is used to test [NetLogo GitHub Actions](https://github.com/danielvartan/netlogo-actions) by running experiments with the *Wolf Sheep Predation* model using [Quarto](https://quarto.org/) and the [`logolink`](https://danielvartan.github.io/logolink/) R package.
+This document is used to test the [netlogo-actions](https://github.com/danielvartan/netlogo-check) [GitHub Actions](https://github.com/features/actions/) under the different experiments set in the *Wolf Sheep Predation* model, included in NetLogo along with the *Sample Models* library.
 
 ## Set the Environment
 

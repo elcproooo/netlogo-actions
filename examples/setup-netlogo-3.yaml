@@ -5,7 +5,7 @@ on:
 name: "setup-netlogo: Integrating with Quarto and logolink"
 
 jobs:
-  NetLogo-check:
+  netlogo-check:
     runs-on: ubuntu-latest
     permissions:
       contents: write
