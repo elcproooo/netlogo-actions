@@ -2,7 +2,7 @@ on:
   push:
     branches: [main, master]
 
-name: 'setup-netlogo test'
+name: 'setup-netlogo'
 permissions: read-all
 
 jobs:
@@ -25,5 +25,19 @@ jobs:
           cache: ${{ matrix.cache }}
 
       - name: Test NetLogo Installation
-        run: netlogo --help
+        run: |
+          if [ "${{ matrix.version }}" = "6.4.0" ]; then
+            MODEL_EXT="nlogo"
+          else
+            MODEL_EXT="nlogox"
+          fi
+
+          MODEL_PATH="$NETLOGO_HOME/models/Sample Models/Biology"
+          MODEL_FILE="Wolf Sheep Predation.$MODEL_EXT"
+
+          netlogo \
+            --headless \
+            --model "$MODEL_PATH/$MODEL_FILE" \
+            --experiment "Wolf Sheep Crossing" \
+            --table /tmp/output.csv
         shell: bash

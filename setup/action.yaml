@@ -91,5 +91,5 @@ runs:
       shell: bash
 
     - name: Test NetLogo
-      run: netlogo --help
+      run: netlogo --help # --version does not work (?)
       shell: bash
