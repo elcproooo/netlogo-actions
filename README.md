@@ -9,9 +9,9 @@
 
 ## Overview
 
-This repository provides [GitHub Actions](https://github.com/features/actions) workflows for running [NetLogo](https://ccl.northwestern.edu/netlogo/) simulations. You can use it to automate testing and execution of NetLogo models within GitHub workflows.
+This repository provides [GitHub Actions](https://github.com/features/actions) for running [NetLogo](https://ccl.northwestern.edu/netlogo/) simulations. You can use it to automate testing and execution of NetLogo models within GitHub workflows.
 
-Currently, the repository includes only the [`setup-netlogo`](setup/action.yaml) action, which installs NetLogo on the runner machine. See the [`examples`](examples) directory for workflow examples. You can also see `setup-netlogo` in action by checking out this repository's [workflow runs](https://github.com/danielvartan/netlogo-actions/actions) page.
+Currently, the repository includes only the [`setup-netlogo`](setup/action.yaml) action, which installs NetLogo on the runner machine. See the [`examples`](examples) directory for workflow examples. You can also see `setup-netlogo` in action by checking this repository's [actions](https://github.com/danielvartan/netlogo-actions/actions) page.
 
 This action can also be integrated with [Quarto](https://quarto.org/) using the [`logolink`](https://danielvartan.github.io/logolink/) R package for more advanced workflows. See [`netlogo-check`](https://github.com/danielvartan/netlogo-check) for an example of such integration.
 
@@ -100,15 +100,14 @@ All actions support only **Linux** runners (e.g., `ubuntu-latest`). We do not pl
 ## License
 
 [![License: GPLv3](https://img.shields.io/badge/license-GPLv3-bd0000.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ```text
 Copyright (C) 2025 Daniel Vartanian
 
-The netlogo-actions is free software: you can redistribute it and/or
-modify it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or (at your
-option) any later version.
+netlogo-actions is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A

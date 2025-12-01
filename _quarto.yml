@@ -1,0 +1,33 @@
+editor: source
+
+execute:
+  cache: false # Do not change!
+  freeze: false # Do not change!
+
+project:
+  type: website
+  output-dir: docs
+
+title: "netlogo-actions: GitHub Actions for the NetLogo Community"
+author: "Daniel Vartanian"
+date: today
+date-format: "long"
+keyword: >
+  NetLogo. GitHub. GitHub Actions. Test Suites. Test Units. Test Automation.
+  R Programming. Quarto. logolink. CI-CD. Simulations. Agent-Based Modeling.
+
+website:
+  site-url: https://danielvartan.github.io/netlogo-actions/
+  repo-url: https://github.com/danielvartan/netlogo-actions/
+  issue-url: https://github.com/danielvartan/netlogo-actions/issues/
+  repo-branch: main
+  repo-actions: [edit, source, issue]
+
+format:
+  html:
+    locale: en
+    language: en-us
+    code-fold: false
+    code-link: true
+    df-print: paged
+    repo-actions: true
