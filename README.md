@@ -13,7 +13,7 @@
 
 Currently, the repository includes only the [`setup-netlogo`](setup/action.yaml) action, which installs NetLogo on the runner machine.
 
-Along with `setup-netlogo`, a series of [workflows examples](.github/workflows) are provided to demonstrate how to use the action in practice. See the [Usage](#usage) section below for more details about them.
+Along with `setup-netlogo`, a series of [workflows examples](.github/workflows) are provided to demonstrate how to use the action in practice. See the [Usage](#usage) section below for more details.
 
 > If you find this project useful, please consider giving it a star! &nbsp; [![GitHub Repository Stars](https://img.shields.io/github/stars/danielvartan/netlogo-actions)](https://github.com/danielvartan/netlogo-actions/)
 
@@ -82,7 +82,7 @@ jobs:
 
 This workflow shows how to combine NetLogo with [Quarto](https://quarto.org/) and the [`logolink`](https://danielvartan.github.io/logolink/) R package to run experiments and generate reproducible reports. It installs all required dependencies, renders the Quarto document, and deploys the output to [GitHub Pages](https://docs.github.com/en/pages). An example report is available [here](https://danielvartan.github.io/netlogo-actions/).
 
-The workflow is visible in action on the repository's [actions page](https://github.com/danielvartan/netlogo-actions/actions), and the complete workflow file is available [here](.github/workflows/run-logolink.yaml).
+You can view this workflow in action on the repository's [actions page](https://github.com/danielvartan/netlogo-actions/actions). The complete workflow file is available [here](.github/workflows/run-logolink.yaml).
 
 Below is a sample workflow configuration.
 
@@ -163,7 +163,7 @@ jobs:
           folder: docs
 ```
 
-For information on workflow RAM, storage, and time limits, refer to the [GitHub Actions usage limits](https://docs.github.com/en/actions/administering-github-actions/usage-limits-billing-and-administration) page.
+For information on workflow RAM, storage, and time limits, refer to the GitHub Actions [usage limits](https://docs.github.com/en/actions/administering-github-actions/usage-limits-billing-and-administration) page.
 
 ## `setup-netlogo` Reference
 
@@ -215,9 +215,9 @@ Use the `with` keyword to change the default values. Example:
 - name: Set up NetLogo
   uses: danielvartan/netlogo-actions/setup-netlogo@v1
   with:
-      version: '6.4.0'
-      architecture: '64'
-      cache: 'true'
+    version: '6.4.0'
+    architecture: '64'
+    cache: 'true'
 ```
 
 ## Supported Platforms
