@@ -75,10 +75,10 @@ runs:
         fi
       shell: bash
 
-    - name: Get NetLogo Version
+    - name: Determine NetLogo Version
       id: netlogo-version
       run: |
-        # Get NetLogo Version
+        # Determine NetLogo Version
         if [[ "${{inputs.version}}" == "release" ]]; then
           NETLOGO_VERSION=$( \
             curl -s \
