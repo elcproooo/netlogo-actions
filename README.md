@@ -29,7 +29,7 @@ Along with these actions, a series of [workflows examples](.github/workflows) ar
 
 This workflow shows how to use the [`check-netlogo`](#check-netlogo-reference) action to automatically verify that all [BehaviorSpace](https://docs.netlogo.org/behaviorspace.html) experiments in a repository's NetLogo models run without errors. This is particularly useful for continuous integration ([CI](https://en.wikipedia.org/wiki/Continuous_integration)) workflows, ensuring that any changes to the models or experiments do not introduce issues.
 
-You can view this workflow in action on the repository's [actions page](https://github.com/danielvartan/netlogo-actions/actions).
+You can view this workflow in action on the repository's [actions page](https://github.com/danielvartan/netlogo-actions/actions). See the [`LogoClim`](https://github.com/sustentarea/logoclim) model for a real-world example of how this action can catch errors early in the development process.
 
 Below is a basic workflow configuration. To use it, create a file named `check-netlogo.yaml` with the content below and place it in the `.github/workflows` folder at the root of your repository.
 
