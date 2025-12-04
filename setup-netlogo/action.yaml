@@ -101,18 +101,18 @@ runs:
       shell: bash
 
     - name: Restore NetLogo cache
-      if: inputs.cache == 'true'
       id: netlogo-cache
+      if: inputs.cache == 'true'
       uses: actions/cache@v4
       with:
         path: "/opt/NetLogo-${{steps.netlogo-version.outputs.version}}"
         key: "netlogo-${{steps.netlogo-version.outputs.version}}-${{inputs.architecture}}"
 
     - name: Download NetLogo
+      id: netlogo-download
       if: |
         inputs.cache != 'true' ||
         steps.netlogo-cache.outputs.cache-hit != 'true'
-      id: netlogo-download
       run: |
         # Download NetLogo
         release_api_url=$(

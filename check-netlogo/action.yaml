@@ -29,19 +29,21 @@ runs:
     - name: Install dependencies
       run: |
         # Install dependencies
-        sudo apt-get update -qq
-        sudo apt-get install -y -qq ripgrep
+        sudo apt-get update -qq >/dev/null
+        sudo apt-get install -y -qq ripgrep >/dev/null
       shell: bash
+
     - name: Create artifacts directory
       run: |
         # Create artifacts directory
         mkdir -p /tmp/check-netlogo
       shell: bash
+
     - name: Search for NetLogo models
       id: netlogo-models
       run: |
         # Search for NetLogo models
-        ignore_patterns="${{ inputs.ignore }}"
+        ignore_patterns="${{inputs.ignore}}"
 
         netlogo_version=$(netlogo --headless --version | awk '{print $2}')
 
@@ -93,6 +95,7 @@ runs:
           echo "EOF" >> "${GITHUB_OUTPUT}"
         fi
       shell: bash
+
     - name: Run experiments
       id: netlogo-experiments
       if: steps.netlogo-models.outputs.found == 'true'
@@ -114,16 +117,22 @@ runs:
               "Running ${model_file}" \
               "with experiment '${experiment_name}'."
 
-            sanitized_name=$( \
+            sanitized_experiment_name=$( \
               echo "${experiment_name}" \
+              | sed 's/[^a-zA-Z0-9_-]/_/g' \
+            )
+
+            sanitized_model_name=$( \
+              basename "${model_file}" \
+              | sed 's/\.[^.]*$//' \
               | sed 's/[^a-zA-Z0-9_-]/_/g' \
             )
 
             output_file=$( \
               printf "%s/%s_%s.csv" \
                 "/tmp/check-netlogo" \
-                "$(basename "${model_file}" | sed 's/\.[^.]*$//')" \
-                "${sanitized_name}" \
+                "${sanitized_model_name}" \
+                "${sanitized_experiment_name}" \
             )
 
             netlogo \
@@ -146,6 +155,7 @@ runs:
           echo "No experiment was found in the NetLogo models."
         fi
       shell: bash
+
     - name: Upload artifacts
       if: |
         steps.netlogo-models.outputs.found == 'true' &&
