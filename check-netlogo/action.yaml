@@ -101,6 +101,8 @@ runs:
       if: steps.netlogo-models.outputs.found == 'true'
       run: |
         # Run experiments
+        export JAVA_TOOL_OPTIONS="-Dcom.sun.media.jai.disableMediaLib=true"
+
         readarray -t models <<< "${{ steps.netlogo-models.outputs.models }}"
 
         for model_file in "${models[@]}"; do
@@ -139,7 +141,8 @@ runs:
               --headless \
               --model "${model_file}" \
               --experiment "${experiment_name}" \
-              --table "${output_file}"
+              --table "${output_file}" \
+              2> >(grep -v "Could not find mediaLib accelerator")
           done
         done
 

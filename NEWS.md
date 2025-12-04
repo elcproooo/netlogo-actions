@@ -1,5 +1,9 @@
 # v1.2.0.9000 (development version)
 
+# v1.2.1 (2025-12-04)
+
+- `[check-netlogo]` now suppresses harmless warnings related to [mediaLib](https://en.wikipedia.org/wiki/MediaLib). These warnings occur when NetLogo attempts to load a GUI-related library in headless mode while using the [GIS extension](https://github.com/NetLogo/GIS-Extension). See [this issue](https://github.com/NetLogo/GIS-Extension/issues/4) for more details.
+
 # v1.2.0 (2025-12-03)
 
 - `[check-netlogo]` action was added. This action runs all Behaviorspace experiments define in NetLogo models present in a repository and uploads the results as artifacts.
